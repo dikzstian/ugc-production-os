@@ -1,0 +1,32 @@
+# Runtime data — never commit
+data/media/
+data/temp/
+data/chrome_profiles/
+data/db.json
+data/state.json
+
+# Secrets
+*.secret.json
+config.secret.json
+notion.secret.json
+.env
+.env.*
+
+# Browser profiles (cookies, sessions, history)
+browser_profile/
+chrome_profiles/
+profile/
+
+# Dependencies
+node_modules/
+.npm-cache/
+
+# Build output
+dist/
+.next/
+*.tsbuildinfo
+
+# Local notes
+*.local
+.DS_Store
+Thumbs.db

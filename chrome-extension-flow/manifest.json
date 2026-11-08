@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Flow Studio OS — Google Flow Companion",
+  "version": "1.2.0",
+  "description": "Auto-Run Multi-Scene (20-40s+), Auto-Paste Ingredients, Zero-Click Video Capture & Auto-Stitch untuk Google Flow (flow.google.com & labs.google).",
+  "permissions": ["activeTab", "clipboardWrite", "storage"],
+  "host_permissions": [
+    "http://127.0.0.1:3010/*",
+    "http://localhost:3010/*",
+    "https://flow.google.com/*",
+    "https://*.flow.google.com/*",
+    "https://labs.google/*",
+    "https://*.googleapis.com/*",
+    "https://*.googleusercontent.com/*",
+    "https://*.gstatic.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://flow.google.com/*",
+        "https://*.flow.google.com/*",
+        "https://labs.google/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Flow Studio OS Companion",
+    "default_popup": "popup.html"
+  }
+}
